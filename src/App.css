@@ -1,23 +1,53 @@
 body {
-  background-color: #282c34;
-  color: rgb(255, 255, 230);
+  background-color: rgb(210, 210, 210);
+  color: #282c34;
 }
 
 .App {
+  margin: 24px;
 }
 
-.App-header {
-  font-size: 24px;
+.App-header,
+h1 {
+  background-color: #282c34;
+  color: rgb(210, 210, 210);
   font-weight: 700;
   display: flex;
   justify-content: space-around;
 }
 
-.usefull-links{
-  font-size: 16px;
+.usefull-links a {
+  color: #61dafb;
 }
 
 a {
   text-decoration: none;
-  color: #61dafb
+  color: #50638a;
+}
+
+.fields-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.fields-wrapper > div {
+  margin-bottom: 12px;
+}
+
+code {
+  background-color: rgb(240, 240, 240);
+}
+
+ul > li {
+  margin-bottom: 8px;
+}
+
+.MuiFormControl-root {
+  margin: 4px !important;
+}
+
+form {
+  background-color: rgb(220, 220, 220);
+  max-width: 600px;
 }
