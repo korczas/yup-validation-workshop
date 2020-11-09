@@ -1,6 +1,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import { TextField, Button } from "@material-ui/core";
+import validationSchema from "./validation";
 
 export default function Form4a() {
   const formik = useFormik({
@@ -9,6 +10,7 @@ export default function Form4a() {
       confirmPassword: "",
     },
     onSubmit: (values) => alert(JSON.stringify(values, null, 2)),
+    validationSchema,
   });
 
   return (

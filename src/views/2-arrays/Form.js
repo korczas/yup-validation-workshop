@@ -2,6 +2,7 @@ import React from "react";
 import { Formik, Form, Field, FieldArray } from "formik";
 import { TextField, Button, Card, CardContent } from "@material-ui/core";
 import { get } from "lodash";
+import validationSchema from "./validation";
 
 export default function Form2() {
   return (
@@ -11,7 +12,8 @@ export default function Form2() {
           userName: "",
         }}
         onSubmit={(values) => alert(JSON.stringify(values, null, 2))}
-        render={({ values }) => (
+        validationSchema={validationSchema}
+        render={({ values, touched, errors }) => (
           <Form>
             <div className="fields-wrapper">
               <Field component={FormikTextField} name="userName" label="Your name" />
@@ -35,7 +37,13 @@ export default function Form2() {
                               label="Age"
                               type="number"
                             />
-                            <Button type="button" variant="outlined" onClick={() => arrayHelpers.remove(index)}>
+                            <Button
+                              type="button"
+                              variant="outlined"
+                              onClick={() =>
+                                values.friends.length > 1 ? arrayHelpers.remove(index) : arrayHelpers.pop()
+                              }
+                            >
                               -
                             </Button>
                           </div>
@@ -50,6 +58,9 @@ export default function Form2() {
                           Add a friend
                         </Button>
                       </div>
+                      <span style={{ color: "red" }}>
+                        {touched.friends && typeof errors.friends === "string" && errors.friends}
+                      </span>
                     </div>
                   )}
                 />

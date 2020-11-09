@@ -1,8 +1,9 @@
 import React from "react";
-import { useFormik } from "formik";
+import { useFormik, yupToFormErrors } from "formik";
 import { TextField, Button } from "@material-ui/core";
+import validationSchema from "./validation";
 
-export default function Form3() {
+export default function Form3({ adultOnly }) {
   const formik = useFormik({
     initialValues: {
       firstName: "",
@@ -11,6 +12,13 @@ export default function Form3() {
       age: "",
       birthday: "",
       yourSite: "",
+    },
+    validate: async (values) => {
+      try {
+        await validationSchema.validate(values, { context: { adultOnly }, abortEarly: false });
+      } catch (err) {
+        return yupToFormErrors(err);
+      }
     },
     onSubmit: (values) => alert(JSON.stringify(values, null, 2)),
   });

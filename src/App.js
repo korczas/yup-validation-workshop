@@ -1,4 +1,5 @@
 import React from "react";
+import "./translations/validationTranslations";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./translations/i18n";
 import Ex1 from "./views/1-basics";
