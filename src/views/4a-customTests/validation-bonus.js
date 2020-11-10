@@ -1,18 +1,29 @@
 import * as yup from "yup";
-import { isEmpty } from "lodash";
 
 export default yup.object().shape({
-  password: yup.string().test("passwordTest", "incorrect password", function (val) {
-    const errors = {};
-    if (!/[a-z]/g.test(val)) errors.lowerCase = "Min 1 lowercase char is required";
-    if (!/[A-Z]/g.test(val)) errors.upperCase = "Min 1 uppercase char is required";
-    if (!/[0-9]/g.test(val)) errors.number = "Min 1 number is required";
-    if (!/[!@#$%<>?~]/g.test(val)) errors.special = "Min 1 special character is required";
-    if (val.length < 8) errors.length = "Password should be at least 8 charactes";
-
-    if (isEmpty(errors)) return true;
-    else return this.createError({ params: errors });
-  }),
+  password: yup
+    .string()
+    .required()
+    .test("lowercase", "must be lowercase", function (val = "") {
+      if (!/[a-z]+/.test(val)) return this.createError({ path: "password.lowercase" });
+      return true;
+    })
+    .test("length", "Has to be at least 8 chars", function (val = "") {
+      if (val.length < 8) return this.createError({ path: "password.length" });
+      return true;
+    })
+    .test("uppercase", "must be uppercase", function (val) {
+      if (!/[A-Z]+/g.test(val)) return this.createError({ path: "password.uppercase" });
+      return true;
+    })
+    .test("number", "must be number", function (val) {
+      if (!/[0-9]+/g.test(val)) return this.createError({ path: "password.number" });
+      return true;
+    })
+    .test("special", "must be special", function (val) {
+      if (!/[!@#$%<>?~]+/g.test(val)) return this.createError({ path: "password.special" });
+      return true;
+    }),
   confirmPassword: yup.string().test("confirmPassword", "passwords doesn't match", function (val) {
     return this.parent.password === val;
   }),

@@ -1,6 +1,6 @@
 /* eslint-disable no-sequences */
 import React from "react";
-import Form from "./Form";
+import FormBonus from "./FormBonus";
 import { Link } from "react-router-dom";
 
 import { ReactComponent as CheckMark } from "../../images/checkmark.svg";
@@ -10,12 +10,12 @@ export default function Ex4a() {
   return (
     <div>
       <h2>Exercise 4a - Writing you own tests, pt. 1 </h2>
-      <Form />
+      <FormBonus />
       <h3>GUIDELINES:</h3>
       <ul>
         <li>
           In <em>validation.js</em> file create and export a yup validation schema. Import it and use in{" "}
-          <em>Form.js</em> file.
+          <em>FormBonus.js</em> file.
         </li>
         <li>
           Password requirements:
