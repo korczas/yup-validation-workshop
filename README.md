@@ -1,13 +1,28 @@
 # Yup validation course
+Author: Kamil Korczyński
 
-I have created this repo to help my colleagues understand the `yup` library and show how powerful it can be.
-It was designed as a set of exercises that everyone can make on their own.
+## Description:
+This project highlights my expertise in organizing and leading internal workshops for colleagues. The workshops were specifically focused on form validations, utilizing the yup.js library. The objective was to provide a hands-on learning experience for participants through a series of exercises.
 
-This course requires some basic knowledge of `React` and `formik@2`. `Formik` is a great library that has built-in support for yup validation schemas.
+## Features:
+
+- [x] Practical Exercises: The workshops included a set of exercises designed to enhance participants' understanding of form validations using the yup.js library.
+- [x] Individual Learning: Participants were encouraged to work independently, allowing them to practice and apply their knowledge at their own pace.
+- [x] In-depth Coverage: The workshops provided comprehensive coverage of form validation concepts, ensuring participants gained a solid understanding of the subject matter.
+- [x] Collaborative Environment: Participants had the opportunity to discuss challenges and share insights, fostering a collaborative and supportive learning environment.
+
+## Benefits:
+- [x] Skill Enhancement: The workshops aimed to improve participants' skills in form validation techniques using the yup.js library.
+- [x] Empowerment: By providing hands-on exercises, the workshops empowered participants to apply their learning in real-world scenarios.
+- [x] Knowledge Sharing: The collaborative nature of the workshops encouraged participants to share their experiences and insights, fostering a culture of continuous learning within the team.
+
+## Feedback:
+Feedback from previous workshop participants has been overwhelmingly positive, with attendees praising the practical exercises and the opportunity to learn from real-world examples. Participants found the workshops engaging and valuable for their professional development.
+
+## Usage:
+To make the most of these workshops, participants are advised to have a basic understanding of `React` and `formik@2`. The exercises can be completed individually, and participants are encouraged to explore different scenarios and test their validations using the yup.js library.
 
 The course quickly progress from very basic to more advanced exercises. You can always check the solution by switching to the `solutions` branch.
-
-I hope you will have a great time learning `yup`.
 
 ## Lessons
 
@@ -40,4 +55,8 @@ If something is not clear, please create an issue, and I will make my best to he
 
 ![Screenshot of exercise 2](/static/images/demo.png)
 
-### If you liked the course, don't hesitate to star it ⭐️
+## Contributing:
+If you would like to contribute to this project or have suggestions for improvement, please feel free to reach out to me. Your feedback and contributions are highly appreciated.
+
+## Acknowledgments:
+I would like to express my gratitude to my colleagues who participated in the workshops and provided valuable feedback and insights. Their contributions were instrumental in shaping and improving the content of the workshops.
